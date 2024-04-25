@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Підключаємо бібліотеку Font Awesome -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative; /* Важливо для позиціонування випадаючого меню */
+        }
+        header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ccc;
+            padding: 10px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .top-panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #004c9e; /* Синій колір, як на Rozetka */
+            color: #fff;
+            padding: 20px 20px 10px; /* Зменшуємо відступи для компактності */
+        }
+        .top-panel .menu-button {
+            font-size: 24px;
+            margin-right: 10px; /* Збільшуємо відступ з правого боку кнопки */
+            cursor: pointer;
+            position: relative; /* Важливо для позиціонування хрестика закриття */
+        }
+        .main-content {
+            width: 100%;
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .menu-buttons {
+            display: none;
+            position: absolute;
+            top: 0px; /* Зсуваємо меню вище */
+            left: 0;
+            width: 20%;
+            height: 100%;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-left: 3px solid #000; /* Додавання чорної лівої рамки */
+        }
+
+        .menu-buttons h2 {
+            color: #004c9e;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #000; /* Додавання чорної підкреслення */
+            padding-bottom: 5px; /* Додатковий відступ знизу підкреслення */
+        }
+
+        .menu-buttons .menu-item {
+            margin-bottom: 10px; /* Додаємо відступ між кнопками */
+            background-color: #e3e3e3; /* Колір фону контейнера */
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь контейнера */
+        }
+        .menu-buttons .menu-item a {
+            color: #004c9e; 
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease; 
+        }
+        .menu-buttons .menu-item a:hover {
+            color: #ff5f00; 
+        }
+
+        /* Стилі для хрестика закриття меню */
+        .close-menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #004c9e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-panel" style="padding-top: 20px;"> <!-- Додавання чорного відступу -->
+    <div class="left-content">
+        <i class="fas fa-bars menu-button" onclick="toggleMenu()"></i> <!-- Кнопка меню -->
+        <div class="menu-buttons" id="menuButtons">
+            <span class="close-menu" onclick="toggleMenu()">&times;</span> <!-- Хрестик для закриття меню -->
+            <h2>Категорії</h2>
+            <div class="menu-item"><a href="productsforhome.html" target="_blank">Товари для дому</a></div>
+            <div class="menu-item"><a href="productsforanimals.html" target="_blank">Товари для тварин</a></div>
+        </div>
+    </div>
+    <div class="right-content">
+        <!-- Місце для логотипу (замість тексту "Logo") -->
+        <img src="https://i.imgur.com/jIjLR2M.png" alt="Logo" style="height: 40px;"> <!-- Додайте свій логотип тут -->
+    </div>
+</div>
+
+<header>
+    <h1>Welcome to our Farming Site</h1>
+</header>
+
+<div class="main-content">
+    <img src="C:\Users\USER\project\work\img\Lead_Cattle_on_Acreage.jpg" alt="Фото ферми">
+</div>
+
+<footer>
+    <p>This is my first photo website. Find everything you need here!</p>
+    <nav>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com/"  target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/pasha__45_/"><i class="fab fa-instagram"></i></a>
+    </nav>
+</footer>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menuButtons");
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
